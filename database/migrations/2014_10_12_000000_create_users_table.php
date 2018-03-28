@@ -16,10 +16,10 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->string('email')->unique();//指定该字段值为唯一值
+            $table->string('password',60);//保存值最长为60
+            $table->rememberToken();//用于保存记住我的信息
+            $table->timestamps();//分别用于保存用户的创建时间和更新时间。
         });
     }
 
