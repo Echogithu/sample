@@ -22,3 +22,7 @@ Route::get('/users/{user}', 'UsersController@show')->name('users.show');
 
 Route::get('signup', 'UsersController@create')->name('signup');
 Route::resource('users', 'UsersController');//用户资源路由
+
+Route::get('login', 'SessionsController@create')->name('login');
+Route::post('login', 'SessionsController@store')->name('login');
+Route::delete('logout', 'SessionsController@destroy')->name('logout');
